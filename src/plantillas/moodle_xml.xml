@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+    <quiz>
+        <question type="category">
+            <category>
+                <text>$course$/top/{{nombre}}</text>
+            </category>
+            <info format="html">
+                <text></text>
+            </info>
+            <idnumber></idnumber>
+        </question>
+        
+        {{#each preguntas}}
+            <question type="multichoice">
+                <name>
+                    <text>Pregunta {{@index}} - {{enunciado}}</text>
+                </name>
+                <questiontext format="html">
+                    <text>
+                        <![CDATA[{{enunciado}}]]>
+                    </text>
+                </questiontext>
+                <generalfeedback format="moodle_auto_format">
+                    <text></text>
+                </generalfeedback>
+                <defaultgrade>1.0000000</defaultgrade>
+                <penalty>0</penalty>
+                <hidden>0</hidden>
+                <idnumber></idnumber>
+                <single>true</single>
+                <shuffleanswers>false</shuffleanswers>
+                <answernumbering>abc</answernumbering>
+                <correctfeedback format="html">
+                    <text>
+                        <![CDATA[<p>Respuesta correcta</p>]]>
+                    </text>
+                </correctfeedback>
+                <partiallycorrectfeedback format="html">
+                    <text>
+                        <![CDATA[<p>Respuesta parcialmente correcta.</p>]]>
+                    </text>
+                </partiallycorrectfeedback>
+                <incorrectfeedback format="html">
+                    <text>
+                        <![CDATA[<p>Respuesta incorrecta.</p>]]>
+                    </text>
+                </incorrectfeedback>
+
+
+                {{#each opcion}}
+                <answer fraction="{{puntuacion}}" format="html">
+                    <text>
+                        <![CDATA[{{texto}}]]>
+                    </text>
+                    <feedback format="html">
+                        <text></text>
+                    </feedback>
+                </answer>
+                {{/each}}
+                
+            </question>
+        {{/each}}
+    </quiz>
